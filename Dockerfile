@@ -4,4 +4,4 @@ COPY ./requirements ./
 RUN pip install --upgrade pip
 RUN pip install -r ./requirements
 ENTRYPOINT [ "python" ]
-CMD [ "main.py" ]
+CMD [ "market.py" ]
