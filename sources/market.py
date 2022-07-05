@@ -23,7 +23,12 @@ class DataTest(db.Model):
 
 @app.route('/')
 def index():
-    return 'smarket home page'
+    return '<h1>smarket home page</h1>'
+
+
+@app.route('/about/<username>')
+def about(username):
+    return f'<h2>about smarket for {username}</h2>'
 
 
 if __name__ == '__main__':
