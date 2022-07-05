@@ -23,14 +23,13 @@ class DataTest(db.Model):
 
 @app.route('/')
 @app.route('/home')
-@app.route('/index')
-def index():
+def home_page():
     return render_template('home.html')
 
 
-@app.route('/about/<username>')
-def about(username):
-    return f'<h2>about smarket for {username}</h2>'
+@app.route('/market')
+def market_page():
+    return render_template('market.html')
 
 
 if __name__ == '__main__':
