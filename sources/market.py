@@ -1,5 +1,5 @@
 from flask_sqlalchemy import SQLAlchemy
-from flask import Flask
+from flask import Flask, render_template
 
 # Create an app
 app = Flask(__name__)
@@ -23,7 +23,7 @@ class DataTest(db.Model):
 
 @app.route('/')
 def index():
-    return '<h1>smarket home page</h1>'
+    return render_template('home.html')
 
 
 @app.route('/about/<username>')
