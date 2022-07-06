@@ -1,5 +1,5 @@
-Flask course (1:43:43/6:21:03): 
-https://www.youtube.com/watch?v=Qr4QMBUPxWo
+Flask course (1:51:00/6:21:03): 
+https://youtu.be/Qr4QMBUPxWo?t=6673
 
 HTML Snippets: 
 https://github.com/jimdevops19/FlaskSeries
@@ -7,3 +7,6 @@ https://github.com/jimdevops19/FlaskSeries
 Bootstrap:
 https://getbootstrap.com/docs/4.5/getting-started/introduction/
 
+How to use SQLAlchemy filter:
+1. res = Item.query.filter(Item.id == 1).all()
+2. res = Item.query.filter_by(id = 1).all()
