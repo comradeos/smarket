@@ -1,0 +1,2 @@
+commit database changes:
+git add . && git commit data\. -m "upd db: temp files" && git status
