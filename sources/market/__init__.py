@@ -3,7 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 
 # Create an app
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'key'
+app.config['SECRET_KEY'] = 'aba2cbb872a39e02dbbf'
 # Off console warnings
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 # MySQL connection: server 'db', database name 'smarket_data'
