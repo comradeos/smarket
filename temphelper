@@ -1,2 +1,12 @@
-commit database changes:
+Commit database changes:
 git add . && git commit data\. -m "upd db: temp files" && git status
+
+
+Build and up all smarket containers:
+docker-compose up --build
+
+Start (in background) all smarket containers:
+docker start smarket-db-1 && docker start smarket-adminer-1 && docker start smarket-python-1 && docker ps
+
+Stop all smarket containers:
+docker stop smarket-python-1 && docker stop smarket-adminer-1 && docker stop smarket-db-1 && docker ps
