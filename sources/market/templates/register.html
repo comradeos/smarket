@@ -13,6 +13,9 @@ RegisterPage
     <br>
 
     <form method="post" class="form-register" style="color:#fff;">
+        <!-- Cross Site Request Forgery Prevention -->
+        {{ form.hidden_tag() }}
+
         {{ form.username.label() }}
         {{ form.username(class="form-control", placeholder="User Name") }}
 
