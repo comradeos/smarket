@@ -5,5 +5,30 @@ RegisterPage
 {% endblock title %}
 
 {% block content %}
-<h1>Register Form</h1>
+
+<div class="container">
+
+    <img class="mb-4" src="https://cdn-icons-png.flaticon.com/256/476/476863.png" alt="">
+    <h1 class="h3 mb-3 font-weight-normal">Please Create your Account</h1>
+    <br>
+
+    <form method="post" class="form-register" style="color:#fff;">
+        {{ form.username.label() }}
+        {{ form.username(class="form-control", placeholder="User Name") }}
+
+        {{ form.email_address.label() }}
+        {{ form.email_address(class="form-control", placeholder="User Name") }}
+
+        {{ form.password1.label() }}
+        {{ form.password1(class="form-control", placeholder="Password") }}
+
+        {{ form.password2.label() }}
+        {{ form.password2(class="form-control", placeholder="Confirm Password") }}
+
+        <br>
+
+        {{ form.submit() }}
+    </form>
+</div>
+
 {% endblock content %}
