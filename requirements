@@ -5,3 +5,4 @@ PyMySQL==1.0.2
 Flask-WTF==1.0.1
 WTForms==3.0.1
 email-validator==1.2.1
+Bcrypt-Flask==1.0.2
