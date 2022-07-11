@@ -2,7 +2,7 @@ from market import app, db
 from flask import render_template, redirect, url_for, flash
 from market.models import Item, User
 from market.forms import RegisterForm, LoginForm
-from flask_login import login_user
+from flask_login import login_user, logout_user
 
 
 @app.route('/')
@@ -35,6 +35,7 @@ def register_page():
 
 @app.route('/login', methods=['GET','POST'])
 def login_page(): 
+    # Use test login/pass: userabc@email.com
     form = LoginForm()
     if form.validate_on_submit():
         attempted_user = User.query.filter_by(username=form.username.data).first()
@@ -46,3 +47,10 @@ def login_page():
             print('11111111')
             flash(f'Username or password are not match! Please try again!', category='danger')
     return render_template('login.html', form=form)
+
+
+@app.route('/logout')
+def logout_page():
+    logout_user()
+    flash('You have been logged out', category='info')
+    return redirect(url_for('home_page'))
