@@ -17,7 +17,7 @@ class User(db.Model, UserMixin):
     @property
     def prettier_budget(self):
         if len(str(self.budget)) >= 4:
-            return f'{str(self.budget)[:-3]},{str(self.budget)[-3:]}$'
+            return format(self.budget, ',d')
         else:
             return f"{self.budget}$"
 
@@ -35,6 +35,9 @@ class User(db.Model, UserMixin):
     def can_purchase(self, item_obj):
         return self.budget >= item_obj.price
 
+    def can_sell(self, item_obj):
+        return item_obj in self.items
+
 class Item(db.Model):
     id = db.Column(db.Integer(), primary_key=True)
     name = db.Column(db.String(length=30), nullable=False, unique=True)
@@ -49,3 +52,15 @@ class Item(db.Model):
         self.owner = user.id
         user.budget -= self.price
         db.session.commit()
+
+    def sell(self, user):
+        self.owner = None
+        user.budget += self.price
+        db.session.commit()
+            
+            
+            
+            
+            
+            
+            
