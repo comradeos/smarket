@@ -1,11 +1,13 @@
-Flask course (4:33:00/6:21:03): 
-https://youtu.be/Qr4QMBUPxWo?t=16427
+temp info:
 
-HTML Snippets: 
-https://github.com/jimdevops19/FlaskSeries
+from market import db
+from market.models import Item, User
+from random import randint as ran
 
-Bootstrap:
-https://getbootstrap.com/docs/4.5/getting-started/introduction/
+users = User.query.all()
+items = Item.query.all()
+
+# from market.temp import *
 
 How to use SQLAlchemy filter:
 1. res = Item.query.filter(Item.id == 1).all()
