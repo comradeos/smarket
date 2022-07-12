@@ -1,42 +1,41 @@
 {% extends 'base.html' %}
-
 {% block title %}
-RegisterPage
-{% endblock title %}
+Register Page
+{% endblock %}
 
 {% block content %}
 
-<div class="container text-center">
+<body class="text-center">
+    <div class="container">
+        <form method="POST" class="form-register" style="color:white">
+            {{ form.hidden_tag() }}
+            <img class="mb-4" src="https://cdn-icons-png.flaticon.com/256/476/476863.png" alt="">
+            <h1 class="h3 mb-3 font-weight-normal">
+                Please Create your Account
+            </h1>
+            <br>
+            {{ form.username.label() }}
+            {{ form.username(class="form-control", placeholder="User Name") }}
 
-    <img class="mb-4" src="https://cdn-icons-png.flaticon.com/256/476/476863.png" alt="">
-    <h1 class="h3 mb-3 font-weight-normal">Please Create your Account</h1>
-    <br>
+            {{ form.email_address.label() }}
+            {{ form.email_address(class="form-control", placeholder="Email Address") }}
 
-    <form method="post" class="form-register" style="color:#fff;">
-        <!-- Cross Site Request Forgery Prevention -->
-        {{ form.hidden_tag() }}
+            {{ form.password1.label() }}
+            {{ form.password1(class="form-control", placeholder="Password") }}
 
-        {{ form.username.label() }}
-        {{ form.username(class="form-control", placeholder="User Name") }}
+            {{ form.password2.label() }}
+            {{ form.password2(class="form-control", placeholder="Confirm Password") }}
 
-        {{ form.email_address.label() }}
-        {{ form.email_address(class="form-control", placeholder="User Name") }}
+            <br>
 
-        {{ form.password1.label() }}
-        {{ form.password1(class="form-control", placeholder="Password") }}
+            <div class="checkbox mb-3">
+                <h6>Already have an account?</h6>
+                <a class="btn btn-sm btn-secondary" href="{{ url_for('login_page') }}">Login</a>
+            </div>
 
-        {{ form.password2.label() }}
-        {{ form.password2(class="form-control", placeholder="Confirm Password") }}
+            {{ form.submit(class="btn btn-lg btn-block btn-primary") }}
 
-        <br>
-
-        <div class="checkbox mb-3">
-            <h6>Already have an account?</h6>
-            <a class="btn btn-sm btn-secondary" href="{{ url_for('login_page') }}">Login</a>
-         </div>
-
-        {{ form.submit(class="btn btn-lg btn-block btn-primary") }}
-    </form>
-</div>
-
-{% endblock content %}
+        </form>
+    </div>
+</body>
+{% endblock %}
